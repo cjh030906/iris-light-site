@@ -32,7 +32,16 @@ $env:VOICE_RUNTIME_MOCK=0
 
 # 다른 클립과 같은 포맷으로 인코딩
 ffmpeg -y -i out\narration.wav -ac 1 -ar 24000 -b:a 64k -codec:a libmp3lame media\voice\07-install.mp3
+
+# 반드시 마지막에 — 빠뜨리면 숨소리가 길고 끝음절이 잘려 들린다
+python tools\polish_voice.py media\voice\07-install.mp3
 ```
+
+**`tools/polish_voice.py` 를 건너뛰지 말 것.** Qwen3-TTS 출력은 말 시작 전에 낮은
+숨소리가 0.5초 가까이 붙고, 끝 음절의 여운이 최대 음량에서 뚝 끊긴다. 그대로 두면
+"습니다"가 "습니"처럼 들리고 딸깍 소리가 난다. 스크립트가 앞 여백을 120ms로 맞추고,
+끝을 60ms 페이드로 재운 뒤 무음 350ms를 붙인다. 고유명사는 한글로 적으면 발음이
+어긋날 수 있으니(`올라마` → "온라마") 합성 입력에 `Ollama` 처럼 원래 표기로 넣는다.
 
 ## 다운로드 버튼
 
