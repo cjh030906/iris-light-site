@@ -479,7 +479,7 @@ body.at-hero .grain,body.at-hero .scanl{opacity:0}
 /* ============================================================
    04 · 사용한 AI 도구 — 큰 숫자와 앱의 SYSTEM METRICS 막대
    ============================================================ */
-.tools{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,80px);align-items:start}
+.tools{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(30px,5vw,80px);align-items:start}
 @media(max-width:980px){.tools{grid-template-columns:1fr}}
 .big{display:flex;align-items:baseline;gap:14px;margin:clamp(18px,3.4vh,34px) 0 4px}
 .big .v{
@@ -855,21 +855,8 @@ footer .fr a:hover{color:var(--cyan)}
   <div class="rail">
     <p class="lbl rv"><b>04</b>사용한 AI 도구</p>
     <div class="tools">
-      <div class="made rv" id="made">
-        <h2>만들 때도<br>AI를 썼습니다</h2>
-        <div class="big"><span class="v">62</span><span class="of">/ 93</span></div>
-        <p class="big-l">전체 커밋 93개 중 AI 작성 기록이 남은 커밋</p>
-        <ul class="meters" role="img" aria-label="전체 커밋 93개 중 Cursor 48개, Claude Code 14개, AI 기록 없음 31개">
-          <li>Cursor<span class="bar"><i class="s1" style="--w:52%"></i></span><b>48</b></li>
-          <li>Claude Code<span class="bar"><i class="s2" style="--w:15%"></i></span><b>14</b></li>
-          <li>기록 없음<span class="bar"><i class="s0" style="--w:33%"></i></span><b>31</b></li>
-        </ul>
-        <p>HUD, 시작 프로토콜, 음성, IDE Companion은 주로 Cursor로 만들었습니다. 설치 스크립트, 창 모니터, 전화 알림, 라이선스 정리와 이 페이지는 Claude Code(Claude Opus 5)로 작업했습니다.</p>
-        <p class="src">* git 커밋의 Co-authored-by·작성자(Cursor Agent) 기록 기준 · <span style="white-space:nowrap">2026-07-20 ~ 09-15</span></p>
-      </div>
-
-      <div class="rv d1">
-        <p class="lbl" style="margin-bottom:6px">Runtime AI · 앱 안에서 쓰는 AI</p>
+      <div class="rv">
+        <h2>사용 중인<br>AI 모델</h2>
         <div class="stack-l">
           <div class="ai-row"><div class="nm">Ollama</div><div class="ds">모델 런타임. OpenAI 호환 API로 로컬·클라우드 모델 호출</div><span class="st core"><i class="dot on"></i>CORE</span></div>
           <div class="ai-row"><div class="nm">Gemma 4 · Qwen 3.5 등</div><div class="ds">대화·코딩·이미지 분석 모델. HUD에서 골라 씀</div><span class="st core"><i class="dot on"></i>CORE</span></div>
@@ -879,6 +866,19 @@ footer .fr a:hover{color:var(--cyan)}
           <div class="ai-row"><div class="nm">Qwen3-TTS 0.6B</div><div class="ds">직접 녹음한 음성 프로필로 IRIS 목소리를 합성. 알림·전화 낭독</div><span class="st"><i class="dot idle"></i>OPTION</span></div>
           <div class="ai-row"><div class="nm">ShowUI-Aloha</div><div class="ds">PC에서 한 작업을 녹화해 반복 가능한 작업 흐름으로 학습</div><span class="st"><i class="dot idle"></i>OPTION</span></div>
         </div>
+      </div>
+
+      <div class="made rv d1" id="made">
+        <p class="lbl" style="margin-bottom:6px">만들 때 쓴 AI</p>
+        <div class="big"><span class="v">62</span><span class="of">/ 93</span></div>
+        <p class="big-l">전체 커밋 93개 중 AI 작성 기록이 남은 커밋</p>
+        <ul class="meters" role="img" aria-label="전체 커밋 93개 중 Cursor 48개, Claude Code 14개, AI 기록 없음 31개">
+          <li>Cursor<span class="bar"><i class="s1" style="--w:52%"></i></span><b>48</b></li>
+          <li>Claude Code<span class="bar"><i class="s2" style="--w:15%"></i></span><b>14</b></li>
+          <li>기록 없음<span class="bar"><i class="s0" style="--w:33%"></i></span><b>31</b></li>
+        </ul>
+        <p>HUD, 시작 프로토콜, 음성, IDE Companion은 주로 Cursor로 만들었습니다. 설치 스크립트, 창 모니터, 전화 알림, 라이선스 정리와 이 페이지는 Claude Code(Claude Opus 5)로 작업했습니다.</p>
+        <p class="src">* git 커밋의 Co-authored-by·작성자(Cursor Agent) 기록 기준 · <span style="white-space:nowrap">2026-07-20 ~ 09-15</span></p>
       </div>
     </div>
   </div>
@@ -1044,7 +1044,7 @@ footer .fr a:hover{color:var(--cyan)}
   <div class="orb" aria-hidden="true"><img src="shots/iris-core.webp" alt=""></div>
   <div class="rail">
     <p class="lbl rv"><b>10</b>기대 효과</p>
-    <h2>돈이나 장비 때문에<br>AI 에이전트를 못 써 보는 일이 줄었으면 합니다</h2>
+    <h2>진입장벽 없는<br>AI 에이전트</h2>
     <div class="fx4 rv d1">
       <div><div class="k">비용</div><p>월 구독 없이 시작할 수 있습니다.</p></div>
       <div><div class="k">실습</div><p>코딩, 문서 작성, 파일 정리를 내 PC에서 에이전트에게 직접 시켜 보면서 익힐 수 있습니다.</p></div>
